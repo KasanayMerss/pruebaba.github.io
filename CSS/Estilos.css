@@ -48,11 +48,13 @@ header{
 footer{
     width: 100%;
     padding: 50px 0px;
-    background-image: url(../Images/background-footer.svg);
-    background-size: cover;
+  *background-image: url(../Images/background-footer.svg);
+ *background-size: cover;
+ 
     background-color: cyan;
     -webkit-mask-image: url("../Images/background-footer.svg");
     mask-image: url("../Images/background-footer.svg");
+    
 }
 
 .container__footer{
