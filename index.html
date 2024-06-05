@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-    <link rel="stylesheet" href="luisss.css">
-    <title>Document</title>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header>
-		<div class="wrapper">
-			<div class="logo">LOGO</div>
-			<nav>
-				<a href="#">Inicio</a>
-				<a href="#">Guias</a>
-				<a href="#">Opiniones</a>
-				<a href="#">Iniciar Sección</a>
-			</nav>
-		</div>
-	</header>
-    <div class="Contenido-de-la-pagina">
-        <div class="Barra-nag-derecha">
-				<div class="bot-right"><a href="#">NOVEDADES</a><i class="fa-solid fa-circle-right fa-lg" style="color: #ffffff;"></i></div>
-				<div class="bot-right"><a href="#">CONSOLAS</a><i class="fa-solid fa-circle-right fa-lg" style="color: #ffffff;"></i></div>
-                <div class="bot-right"><a href="#">SOPORTE</a><i class="fa-solid fa-circle-right fa-lg" style="color: #ffffff;"></i></div>
-                <div class="bot-right"><a href="#">ABOUT US</a><i class="fa-solid fa-circle-right" ></i></div>
-        </div>
-        <div class="Carrusel">
-            <div class="box__footer">
-                <h2>Redes Sociales </h2>
-                
-                <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
-            </div>
-        </div>
+
+    <div class="calculadora">
+        <input class="pantalla" id="screen" type="text" placeholder="0">
+       
+        <button id="ac" onclick="screen.value=''">AC</button>
+        <button id="ce" onclick="backspc()">←</button>
+        <button class="btn">/</button>
+        <button class="btn">*</button>
+        <button id="prodnota" onclick="prodnota()">(a+b)^2</button>
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">-</button>
+        <button id="ecua2" onclick="ecua2()">2°</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">+</button>
+        <button id="acir" onclick="acir()">A.C</button>
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button onclick="sqrt()" id="igu">√</button>
+        <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+        <button id="cero" class="btn">0</button>
+        <button class="btn">.</button>
     </div>
+
     
+    
+    <script src="./js/main.js"></script>
 </body>
 </html>
