@@ -1,74 +1,76 @@
-var screen = document.querySelector('#screen');
-var btn = document.querySelectorAll('.btn');
+const pantalla = document.querySelector(".pantalla");
+const botones = document.querySelectorAll(".btn");
 
-for (item of btn) {
-    item.addEventListener('click', (e) => {
-        btntext = e.target.innerText;
+botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+        const botonApretado = boton.textContent;
 
-        if (btntext == '×') {
-            btntext = '*';
+        if (boton.id === "ecua2") {
+            var a = prompt("Introduzca el valor de a");
+            var b = prompt("Introduzca el valor de b");
+            var c = prompt("Introduzca el valor de c");
+            var solr = 0;
+            var sols = 0;
+            let result = '';
+            sols = (-1 * b) + (b**2 -4 * a * c)**0.5;
+            sols = sols / (2 * a);
+            
+            solr = (-1 * b)-(b**2 - 4 * a * c)**0.5;
+            solr = solr / (2 * a);
+        
+            result = (sols.toFixed(2)+" y "+solr.toFixed(2));
+        
+            pantalla.textContent = result;
+            return;
         }
 
-        if (btntext == '÷') {
-            btntext = '/';
+        if (boton.id === "prodnota") {
+            var a = prompt("Introduzca el valor de a");
+            var b = prompt("Introduzca el valor de b");
+            
+            pantalla.textContent = (a)**2 + 2 * a * b + (b)**2;
+            return;
         }
-        screen.value += btntext;
-    });
-}
 
-function ecua2() {
-    var a = prompt("Introduzca el valor de a");
-    var b = prompt("Introduzca el valor de b");
-    var c = prompt("Introduzca el valor de c");
-    var solr = 0;
-    let result = '';
-    sols = (-1 * b) + (b**2 -4 * a * c)**0.5;
-    sols = sols / (2 * a);
-    
-    solr = (-1 * b)-(b**2 - 4 * a * c)**0.5;
-    solr = solr / (2 * a);
+        if (boton.id === "acir") {
+            var num;
+            num = pantalla.textContent;
+            pantalla.textContent = 3.14159265359 * (num)**2;
+            return;
+        }
 
-    result = (sols+" y "+solr);
+        if (boton.id === "igu") {
+            pantalla.textContent = (pantalla.textContent)**0.5;
+            return;
+        }
 
-    screen.value = result;
+        if (boton.id === "c") {
+            pantalla.textContent = "0";
+            return;
+        }
 
-}
+        if (boton.id === "borrar") {
+            if (pantalla.textContent.length === 1 || pantalla.textContent === "Error!") {
+                pantalla.textContent = "0";
+            } else {
+                pantalla.textContent = pantalla.textContent.slice(0, -1);
+            }
+            return;
+        }
 
-function prodnota() {
-    var a = prompt("Introduzca el valor de a");
-    var b = prompt("Introduzca el valor de b");
-    
-    screen.value = (a)**2 + 2 * a * b + (b)**2;
-}
+        if (boton.id === "igual") {
+            try {
+                pantalla.textContent = eval(pantalla.textContent);
+            } catch {
+                pantalla.textContent = "Error!";
+            }
+            return;
+        }
 
-function acir() {
-    var num;
-    num = screen.value;
-    screen.value = 3.14159265359 * (num)**2;
-}
-
-function sqrt() {
-    screen.value = (screen.value)**0.5;
-}
-
-
-function pi() {
-    screen.value = 3.14159265359;
-}
-
-function fact() {
-    var i, num, f;
-    f = 1
-    num = screen.value;
-    for (i = 1; i <= num; i++) {
-        f = f * i;
-    }
-
-    i = i - 1;
-
-    screen.value = f;
-}
-
-function backspc() {
-    screen.value = screen.value.substr(0, screen.value.length - 1);
-}
+        if (pantalla.textContent === "0" || pantalla.textContent === "Error!") {
+            pantalla.textContent = botonApretado;
+        } else {
+            pantalla.textContent += botonApretado;
+        }
+    })
+})

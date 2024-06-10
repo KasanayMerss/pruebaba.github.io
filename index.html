@@ -5,39 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
 
     <div class="calculadora">
-        <input class="pantalla" id="screen" type="text" placeholder="0">
-       
-        <button id="ac" onclick="screen.value=''">AC</button>
-        <button id="ce" onclick="backspc()">←</button>
+        <div class="pantalla">0</div>
+
+        <button id="c" class="btn">C</button>
+        <button id="borrar" class="btn">←</button>
         <button class="btn">/</button>
         <button class="btn">*</button>
-        <button id="prodnota" onclick="prodnota()">(a+b)^2</button>
+        <button class="btn" id="prodnota" onclick="prodnota()">(a+b)^2</button>
         <button class="btn">7</button>
         <button class="btn">8</button>
         <button class="btn">9</button>
         <button class="btn">-</button>
-        <button id="ecua2" onclick="ecua2()">2°</button>
+        <button class="btn" id="ecua2" onclick="ecua2()">2°</button>
         <button class="btn">4</button>
         <button class="btn">5</button>
         <button class="btn">6</button>
         <button class="btn">+</button>
-        <button id="acir" onclick="acir()">A.C</button>
+        <button class="btn" id="acir" onclick="acir()">A.C</button>
         <button class="btn">1</button>
         <button class="btn">2</button>
         <button class="btn">3</button>
-        <button onclick="sqrt()" id="igu">√</button>
-        <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+        <button class="btn" onclick="sqrt()" id="igu">√</button>
+        <button id="igual" class="btn">=</button>
         <button id="cero" class="btn">0</button>
         <button class="btn">.</button>
     </div>
-
-    
-    
     <script src="./js/main.js"></script>
 </body>
 </html>
